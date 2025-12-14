@@ -1,0 +1,77 @@
+{
+	"compiler": {
+		"version": "0.8.31+commit.fd3a2265"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "message",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_msg",
+						"type": "string"
+					}
+				],
+				"name": "setMessage",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"ElMino_HalalSupplyChain.sol": "TestContract"
+		},
+		"evmVersion": "osaka",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"ElMino_HalalSupplyChain.sol": {
+			"keccak256": "0xab557e30cd022c2600ba2010a8032cd6ddeaa1a0c71a50a73352bc68f4823bee",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d10bc675fdb07b204ad4df65cbc8981ff1c6e84a89831a5bf1e8e5f8358272a1",
+				"dweb:/ipfs/QmVh4si21nixvhz4Zd8QonPoTPLmixqSXkFS2LtgzUw5iv"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,391 @@
+{
+	"compiler": {
+		"version": "0.8.31+commit.fd3a2265"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "actor",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "enum ElMinoHalalSupplyChain.Role",
+						"name": "role",
+						"type": "uint8"
+					}
+				],
+				"name": "ActorAuthorized",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "string",
+						"name": "batchId",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "productName",
+						"type": "string"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "producer",
+						"type": "address"
+					}
+				],
+				"name": "BatchCreated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "string",
+						"name": "batchId",
+						"type": "string"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					}
+				],
+				"name": "BatchTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "string",
+						"name": "batchId",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "certHash",
+						"type": "string"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "halalAuthority",
+						"type": "address"
+					}
+				],
+				"name": "HalalCertified",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "string",
+						"name": "batchId",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "newStatus",
+						"type": "string"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "updatedBy",
+						"type": "address"
+					}
+				],
+				"name": "StatusUpdated",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "admin",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "actor",
+						"type": "address"
+					},
+					{
+						"internalType": "enum ElMinoHalalSupplyChain.Role",
+						"name": "role",
+						"type": "uint8"
+					}
+				],
+				"name": "assignRole",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "batchId",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "productName",
+						"type": "string"
+					}
+				],
+				"name": "createBatch",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "batchId",
+						"type": "string"
+					}
+				],
+				"name": "getBatch",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "productName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "id",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "producer",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "currentOwner",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "status",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "halalCertHash",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "createdAt",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "batchId",
+						"type": "string"
+					}
+				],
+				"name": "isBatchExists",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "roles",
+				"outputs": [
+					{
+						"internalType": "enum ElMinoHalalSupplyChain.Role",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "batchId",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "certHash",
+						"type": "string"
+					}
+				],
+				"name": "setHalalCertificate",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "batchId",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					}
+				],
+				"name": "transferBatch",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "batchId",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "newStatus",
+						"type": "string"
+					}
+				],
+				"name": "updateStatus",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"events": {
+				"ActorAuthorized(address,uint8)": {
+					"notice": "Admin assigns roles (whitelisting)"
+				}
+			},
+			"kind": "user",
+			"methods": {
+				"admin()": {
+					"notice": "Contract deployer becomes Admin"
+				},
+				"assignRole(address,uint8)": {
+					"notice": "assignRole Admin assigns one of: Producer, HalalAuthority, Distributor, Retailer"
+				},
+				"createBatch(string,string)": {
+					"notice": "createBatch(batchId, productName) — only Producer - prevents duplicates - initializes status as \"Produced\""
+				},
+				"getBatch(string)": {
+					"notice": "getBatch(batchId) returns full details for consumer verification"
+				},
+				"roles(address)": {
+					"notice": "Store role of each address"
+				},
+				"setHalalCertificate(string,string)": {
+					"notice": "setHalalCertificate(batchId, certHash) - Only HalalAuthority - Must OWN the batch first (onlyCurrentOwner) - Only certify once - Sets status to \"Certified Halal\""
+				},
+				"transferBatch(string,address)": {
+					"notice": "transferBatch(batchId, to) Enforced sequence (patched): Producer -> HalalAuthority -> Distributor -> Retailer Rules: - batch exists - only currentOwner can transfer - recipient must be authorized"
+				},
+				"updateStatus(string,string)": {
+					"notice": "updateStatus(batchId, newStatus) Requirement: only currentOwner OR authorized roles. Implementation: - If caller is currentOwner => allowed - OR if caller has any authorized role (not None) => allowed"
+				}
+			},
+			"notice": "=================================================================================================  El Mino - Halal Supply Chain Tracking (Part 1)  Minimum Requirements Covered (from Overall specification file in Italeem):  1) Roles: producer, halalAuthority, distributor, retailer (+ admin deployer)  2) Batch Data: productName, batchId, producer, currentOwner, status, halalCertHash, createdAt  3) Core Functions:     - createBatch(batchId, productName) -> only producer     - setHalalCertificate(batchId, certHash) -> only halalAuthority (and must own batch)     - updateStatus(batchId, newStatus) -> only currentOwner OR authorized roles     - transferBatch(batchId, to) -> enforce sequence     - getBatch(batchId) -> returns full details  4) Events: BatchCreated, HalalCertified, StatusUpdated, BatchTransferred =================================================================================================",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"ElMino_HalalSupplyChain.sol": "ElMinoHalalSupplyChain"
+		},
+		"evmVersion": "osaka",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"ElMino_HalalSupplyChain.sol": {
+			"keccak256": "0x5f0e346fc69b7dde30f9373fe075291eff09df1a42fdd330d8150834d40b816e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4f24d0bb677702fea8f0c060d5ce6338b7c02e31577dddf5607b0407b2cff11a",
+				"dweb:/ipfs/QmW65PEbv1X7UfGeeu32BAz6u73aRV8ToYw9ToNPrTukWb"
+			]
+		}
+	},
+	"version": 1
+}
