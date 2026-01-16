@@ -6,7 +6,7 @@ function getStepStatus(currentStatus, stepName) {
   
   // Logic: Has the product reached or passed this stage?
   if (stepName === "Producer") return true; // Always starts here
-  if (stepName === "Halal Auth" && status !== "created") return true;
+  if (stepName === "Halal Authority" && status !== "created") return true;
   if (stepName === "Distributor" && (status.includes("transit") || status.includes("sale"))) return true;
   if (stepName === "Retailer" && status.includes("sale")) return true;
   
@@ -28,7 +28,7 @@ export default function BatchVerifyCard({
   if (verifyResult) {
     // 1. Calculate status symbols for each step
     const s1 = getStepStatus(verifyResult.status, "Producer")    ? "✅" : "❌";
-    const s2 = getStepStatus(verifyResult.status, "Halal Auth")  ? "✅" : "❌";
+    const s2 = getStepStatus(verifyResult.status, "Halal Authority")  ? "✅" : "❌";
     const s3 = getStepStatus(verifyResult.status, "Distributor") ? "✅" : "❌";
     const s4 = getStepStatus(verifyResult.status, "Retailer")    ? "✅" : "❌";
 
@@ -115,7 +115,7 @@ export default function BatchVerifyCard({
 
           {/* --- 2. THE VISUAL TIMELINE (On Screen) --- */}
           <div className="timeline-container">
-            {["Producer", "Halal Auth", "Distributor", "Retailer"].map((step, index) => {
+            {["Producer", "Halal Authority", "Distributor", "Retailer"].map((step, index) => {
                const isActive = getStepStatus(verifyResult.status, step);
                return (
                  <div key={step} className={`timeline-step ${isActive ? "active" : ""}`}>
