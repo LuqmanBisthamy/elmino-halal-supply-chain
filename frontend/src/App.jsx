@@ -364,11 +364,18 @@ function App() {
 
     try {
       const batch = await readContract.getBatch(verifyForm.batchId);
+      let ownerRole = 0;
+      try {
+        ownerRole = Number(await readContract.roles(batch.currentOwner));
+      } catch (err) {
+        ownerRole = 0;
+      }
       setVerifyResult({
         productName: batch.productName,
         batchId: batch.id.toString(),
         producer: batch.producer,
         currentOwner: batch.currentOwner,
+        currentOwnerRole: ownerRole,
         status: batch.status,
         halalCertHash: batch.halalCertHash,
         createdAt: new Date(Number(batch.createdAt) * 1000).toLocaleString(),
