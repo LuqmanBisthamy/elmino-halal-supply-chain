@@ -1,6 +1,11 @@
 node_modules/
 frontend/node_modules/
 .env
+.env.*
+!.env.example
+frontend/.env
+frontend/.env.*
+!frontend/.env.example
 
 # Hardhat files
 /cache
