@@ -60,32 +60,32 @@ export default function BatchVerifyCard({
       verifyResult.currentOwnerRole,
       verifyResult.halalCertHash
     )
-      ? "OK"
-      : "X";
+      ? "✅"
+      : "❌";
     const s2 = getStepStatus(
       verifyResult.status,
       "Halal Authority",
       verifyResult.currentOwnerRole,
       verifyResult.halalCertHash
     )
-      ? "OK"
-      : "X";
+      ? "✅"
+      : "❌";
     const s3 = getStepStatus(
       verifyResult.status,
       "Distributor",
       verifyResult.currentOwnerRole,
       verifyResult.halalCertHash
     )
-      ? "OK"
-      : "X";
+      ? "✅"
+      : "❌";
     const s4 = getStepStatus(
       verifyResult.status,
       "Retailer",
       verifyResult.currentOwnerRole,
       verifyResult.halalCertHash
     )
-      ? "OK"
-      : "X";
+      ? "✅"
+      : "❌";
 
     // 2. Build the text string
     qrContent =
